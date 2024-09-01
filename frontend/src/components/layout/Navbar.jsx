@@ -73,6 +73,11 @@ function Navbar() {
                 About
               </Link>
             </li>
+            <li>
+              <Link to={"/profile"} onClick={handleNavbar}>
+                Profile
+              </Link>
+            </li>
           </ul>
 
           <div className="btns">

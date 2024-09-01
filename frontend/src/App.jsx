@@ -16,6 +16,7 @@ import axios from "axios";
 import AllBlogs from "./components/pages/Blogs";
 import { Toaster } from "react-hot-toast";
 import Privacy from "./components/pages/Privacy";
+import MyProfile from "./components/minicomponents/MyProfile";
 
 function App() {
   const {
@@ -75,6 +76,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/privacyPolicy" element={<Privacy />} />
         <Route path="/authors" element={<Authors />} />
+        <Route path="/profile" element={<MyProfile />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/blog/update/:id" element={<UpdateBlog />} />
       </Routes>
