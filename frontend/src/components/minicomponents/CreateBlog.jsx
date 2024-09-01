@@ -77,7 +77,7 @@ const CreateBlog = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/v1/blog/post",
+        "https://blog-backend-c8by.onrender.com/api/v1/blog/post",
         formData,
         {
           withCredentials: true,
