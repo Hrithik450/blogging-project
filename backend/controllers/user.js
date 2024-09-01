@@ -69,7 +69,7 @@ export const Register = CatchAsyncError(async (req, res, next) => {
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
   });
 
-  return res.status(200).json({ messsage: "Successfully created", token });
+  return res.status(200).json({ messsage: "Successfully created" });
 });
 
 export const Login = CatchAsyncError(async (req, res, next) => {

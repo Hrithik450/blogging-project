@@ -5,8 +5,10 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
+import LoadingSpinner from "../minicomponents/spinner";
 
 const Login = () => {
+  const [spinner, setspinner] = useState(false);
   const navigate = useNavigate();
   const { Mode, isAuthenticated, setisAuthenticated } = useMainContext();
   const [formData, setformData] = useState({
@@ -15,6 +17,7 @@ const Login = () => {
   });
 
   const handleLogin = async (e) => {
+    setspinner(true);
     e.preventDefault();
     try {
       const response = await axios.post(
@@ -25,6 +28,7 @@ const Login = () => {
         }
       );
       if (response.status === 200) {
+        setspinner(false);
         setformData({
           email: "",
           password: "",
@@ -107,7 +111,7 @@ const Login = () => {
             Don't have a account ? <Link to={"/register"}>Register Now </Link>
           </p>
           <button type="submit" className="submit-btn">
-            LOGIN
+            {spinner ? <LoadingSpinner /> : <> LOGIN</>}
           </button>
         </form>
       </section>

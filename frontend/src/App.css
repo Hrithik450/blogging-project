@@ -1671,3 +1671,23 @@ footer .container:last-child .links a svg {
   text-align: start;
   width: 100%;
 }
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  font-size: 24px;
+  color: black;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

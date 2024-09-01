@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
+import LoadingSpinner from "../minicomponents/spinner";
 
 const Register = () => {
+  const [spinner, setspinner] = useState(false);
   const navigate = useNavigate();
   const [formData, setformData] = useState({
     name: "",
@@ -35,7 +37,7 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
+    setspinner(true);
     try {
       const response = await axios.post(
         "https://blog-backend-c8by.onrender.com/api/v1/user/createUser",
@@ -46,6 +48,7 @@ const Register = () => {
         }
       );
       if (response.status === 200) {
+        setspinner(false);
         setformData({
           name: "",
           email: "",
@@ -175,7 +178,7 @@ const Register = () => {
             Already Registered ? <Link to={"/login"}>Login Now </Link>
           </p>
           <button type="submit" className="submit-btn">
-            REGISTER
+            {spinner ? <LoadingSpinner /> : <>REGISTER</>}
           </button>
         </form>
       </section>
