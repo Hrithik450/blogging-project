@@ -3,6 +3,8 @@ import { useMainContext } from "../store/Context";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { FiEye } from "react-icons/fi";
+import { FiEyeOff } from "react-icons/fi";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,6 +51,12 @@ const Login = () => {
     }, 1000);
   }
 
+  const [EyeOpen, setEyeOpen] = useState(true);
+
+  const handlePassword = () => {
+    setEyeOpen(!EyeOpen);
+  };
+
   return (
     <article className={Mode === "dark" ? "dark-bg" : "light-bg"}>
       <section className="auth-form">
@@ -65,14 +73,35 @@ const Login = () => {
             />
           </div>
 
-          <div>
+          <div style={{ position: "relative" }}>
             <input
-              type="password"
+              type={EyeOpen ? "password" : "text"}
               name="password"
               value={formData.password}
               onChange={handleChange}
               placeholder="password"
             />
+            {EyeOpen ? (
+              <FiEye
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "0",
+                  transform: "translateY(-50%)",
+                }}
+                onClick={handlePassword}
+              />
+            ) : (
+              <FiEyeOff
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "0",
+                  transform: "translateY(-50%)",
+                }}
+                onClick={handlePassword}
+              />
+            )}
           </div>
           <p>
             Don't have a account ? <Link to={"/register"}>Register Now </Link>
