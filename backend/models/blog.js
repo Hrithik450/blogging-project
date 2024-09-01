@@ -5,7 +5,7 @@ const BlogSchema = mongoose.Schema({
     type: String,
     required: true,
     minLength: [1, "Blog title must contain at least 10 chracters"],
-    maxLength: [40, "Blog title cannot exceeed 40 chracters"],
+    maxLength: [150, "Blog title cannot exceeed 40 chracters"],
   },
   mainImage: {
     public_id: {

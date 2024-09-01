@@ -928,7 +928,7 @@ footer .container:last-child .links a svg {
   min-width: 1500px;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 1rem;
   display: flex;
   flex-direction: column;
 }
