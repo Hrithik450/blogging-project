@@ -9,14 +9,14 @@ const Authors = () => {
     const FetchAuthors = async () => {
       try {
         const response = axios.get(
-          "http://localhost:7000/api/v1/user/authors",
+          "https://blog-backend-c8by.onrender.com/api/v1/user/authors",
           { withCredentials: true }
         );
         if ((await response).status === 200) {
           setauthors((await response).data.Authors);
         }
       } catch (error) {
-        console.log(error);
+        setauthors([])
       }
     };
 
