@@ -24,7 +24,7 @@ const UpdateBlog = () => {
     const FetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/api/v1/blog/${id}`,
+          `https://blog-backend-c8by.onrender.com/api/v1/blog/${id}`,
           { withCredentials: true }
         );
         if (response.status === 200) {
@@ -50,14 +50,11 @@ const UpdateBlog = () => {
     FetchBlog();
   }, [id]);
 
-  console.log(formData);
-
   const handleUpdate = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
       const response = await axios.put(
-        `http://localhost:7000/api/v1/blog/${id}`,
+        `https://blog-backend-c8by.onrender.com/api/v1/blog/${id}`,
         formData,
         {
           withCredentials: true,
