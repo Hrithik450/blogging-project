@@ -25,7 +25,7 @@ function Navbar() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        "http://localhost:7000/api/v1/user/logout",
+        "https://blog-backend-c8by.onrender.com/api/v1/user/logout",
         { withCredentials: true }
       );
       if (response.status === 200) {
