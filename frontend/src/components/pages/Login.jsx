@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/v1/user/loginUser",
+        "https://blog-backend-c8by.onrender.com/api/v1/user/loginUser",
         formData,
         {
           withCredentials: true,
