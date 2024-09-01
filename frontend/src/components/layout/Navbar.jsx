@@ -14,7 +14,7 @@ function Navbar() {
     setshow(!show);
   };
 
-  const isDashboard = useLocation("http://localhost:5173/dashboard");
+  const isDashboard = useLocation("https://blog-frontend-2-dfm4.onrender.com/dashboard");
 
   const { Mode, setMode, User, setUser, isAuthenticated, setisAuthenticated } =
     useMainContext();
@@ -25,7 +25,7 @@ function Navbar() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        "http://localhost:7000/api/v1/user/logout",
+        "https://blog-backend-c8by.onrender.com/api/v1/user/logout",
         { withCredentials: true }
       );
       if (response.status === 200) {

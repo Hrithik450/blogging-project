@@ -32,7 +32,7 @@ function App() {
     const FetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7000/api/v1/user/me",
+          "https://blog-backend-c8by.onrender.com/api/v1/user/me",
           { withCredentials: true }
         );
 
@@ -49,7 +49,7 @@ function App() {
     const FetchBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7000/api/v1/blog/getblogs",
+          "https://blog-backend-c8by.onrender.com/api/v1/blog/getblogs",
           { withCredentials: true }
         );
         if (response.status === 200) {

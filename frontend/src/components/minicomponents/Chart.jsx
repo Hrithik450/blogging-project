@@ -32,7 +32,7 @@ const Chart = () => {
     const FetchMyBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7000/api/v1/blog/blogs/MyBlogs",
+          "https://blog-backend-c8by.onrender.com/api/v1/blog/blogs/MyBlogs",
           { withCredentials: true }
         );
         if (response.status === 200) {

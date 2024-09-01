@@ -38,7 +38,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/v1/user/createUser",
+        "https://blog-backend-c8by.onrender.com/api/v1/user/createUser",
         formData,
         {
           withCredentials: true,

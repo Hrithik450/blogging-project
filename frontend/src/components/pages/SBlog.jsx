@@ -13,7 +13,7 @@ const SingleBlog = () => {
     const GetBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:7000/api/v1/blog/${id}`,
+          `https://blog-backend-c8by.onrender.com/api/v1/blog/${id}`,
           { withCredentials: true }
         );
 

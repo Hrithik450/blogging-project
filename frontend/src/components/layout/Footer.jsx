@@ -7,7 +7,7 @@ import { useMainContext } from "../store/Context";
 import { AiFillLinkedin } from "react-icons/ai";
 
 const Footer = () => {
-  const isDashboard = useLocation("http://localhost:5173/dashboard");
+  const isDashboard = useLocation("https://blog-frontend-2-dfm4.onrender.com/dashboard");
   const { Mode, setMode, User, setUser, isAuthenticated, setisAuthenticated } =
     useMainContext();
 

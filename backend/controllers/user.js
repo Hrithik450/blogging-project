@@ -63,8 +63,8 @@ export const Register = CatchAsyncError(async (req, res, next) => {
 
   res.cookie("HID", token, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "None",
     path: "/",
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
   });
@@ -98,8 +98,8 @@ export const Login = CatchAsyncError(async (req, res, next) => {
 
   res.cookie("HID", token, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "None",
     path: "/",
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
   });

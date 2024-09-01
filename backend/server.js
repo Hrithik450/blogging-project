@@ -24,7 +24,7 @@ const app = express();
 connectDB(process.env.MONGO_URL);
 
 const options = {
-  origin: "http://localhost:5173",
+  origin: "https://blog-frontend-2-dfm4.onrender.com",
   credentials: true,
 };
 
